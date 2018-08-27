@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yangwj.soft.dao.UserMapper">
+    <!-- 缓存类配置 -->
+    <cache type="com.yangwj.soft.redis.RedisCache" />
+
+    <select id="getUserById" parameterType="int" resultType="user" useCache="true">
+        select * from AU_USER where user_id = #{id}
+    </select>
+</mapper>
